@@ -33,10 +33,10 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question('MetaMask cüzdanının özel anahtarını girin: ', (privateKey) => {
-  rl.question('Göndermek istediğiniz cüzdan adresini girin: ', (toAddress) => {
-    rl.question('Göndermek istediğiniz miktarı girin (tevmos): ', (amount) => {
-      rl.question('İşlemi kaç saniyede bir tekrar etmek istiyorsunuz? (saniye cinsinden): ', (interval) => {
+rl.question('MetaMask private: ', (privateKey) => {
+  rl.question('toaddess: ', (toAddress) => {
+    rl.question('amount ', (amount) => {
+      rl.question('delay time (s): ', (interval) => {
 
         const rpcURL = "http://localhost:16545"; // veya sunucunuzun IP'si: "http://your-server-ip:16545"
         const web3 = new Web3(new Web3.providers.HttpProvider(rpcURL));
